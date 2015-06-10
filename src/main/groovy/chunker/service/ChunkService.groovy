@@ -5,6 +5,7 @@ import chunker.domain.ChunkParent
 import chunker.domain.ChunkParentRepository
 import chunker.domain.FountainChunker
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.data.mongodb.core.query.Criteria
 import org.springframework.data.mongodb.core.query.Query
 import org.springframework.data.mongodb.gridfs.GridFsTemplate
@@ -18,7 +19,8 @@ import java.nio.charset.StandardCharsets
 @Service
 class ChunkService {
 
-    private final CHUNK_SIZE = 1
+    @Value('${ofwat.chunkSize}')
+    Integer chunkSize
 
     private final ChunkParentRepository chunkParentRepository
 
@@ -40,7 +42,7 @@ class ChunkService {
         chunkParent.setLastAccessed(new Date())
         chunkParent.setId(UUID.randomUUID().toString())
         FountainChunker chunker = new FountainChunker(fs)
-        def chunks = chunker.chunk(jsonArray, CHUNK_SIZE)
+        def chunks = chunker.chunk(jsonArray, chunkSize)
         chunkParent.chunks = chunks
         return this.chunkParentRepository.save(chunkParent)
     }

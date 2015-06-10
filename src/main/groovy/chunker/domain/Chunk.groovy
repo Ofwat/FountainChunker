@@ -9,6 +9,8 @@ import org.springframework.util.Assert;
  */
 class Chunk {
 
+    //TODO we need a way to reference the block of 'chunks' i.e. if we require a particular data key then how do we find it?
+
     @Id
     private String id
     private int chunkSize

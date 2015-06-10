@@ -41,7 +41,7 @@ class ChunkerRestController {
                 .buildAndExpand().toUri();
         headers.setLocation(uri);
 
-        //TODO turn the JSON into an object and split into batches
+        //Turn the JSON into an object and split into batches
         ChunkParent chunkParent = chunkService.chunkArray(jsonString)
 
         return new ResponseEntity<Void>(chunkParent, headers, HttpStatus.CREATED);
