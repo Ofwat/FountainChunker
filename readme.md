@@ -5,10 +5,10 @@ Application to Split large posted JSON array payloads into arbitrary chunks of e
 
 Posting arrays
 --------------
-Run the compiled JAR with embedded Tomcat:
-java -jar fountainChunker.jar
+Run the compiled JAR with embedded Tomcat:java -jar fountainChunker.jar
+
 POST data to:
-http://localhost:8090/chunks/
+`http://localhost:8090/chunks/`
 Where the body is a JSON array. 
 
 Response will look like:
@@ -30,7 +30,7 @@ Response will look like:
 `
 Retrieving JSON 'Chunks'
 ------------------------
-GET to http://localhost:8090/chunks/1cbb6263-dfab-4bb8-b1c3-67fe71a82dfa/3377d44d-3ef5-4e15-928f-8f239d5cb325.json
+GET to `http://localhost:8090/chunks/1cbb6263-dfab-4bb8-b1c3-67fe71a82dfa/3377d44d-3ef5-4e15-928f-8f239d5cb325.json`
 Where the first UUID is the id from the response and the second UUID is the chunk fileRef from the response. 
 
 Configurable Properties
