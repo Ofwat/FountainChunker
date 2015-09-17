@@ -41,7 +41,7 @@ class FountainChunker implements Chunker{
             //Get CHUNK_SIZE items and turn them into a JSON String array,
             items.add(entry)
             itemCount++
-            if(itemCount >= chunkSize){
+            if((itemCount >= chunkSize) || (i+1 == objArray.size())){
                 //turn to a string and store the items.
                 String chunkJson = gson.toJson(items)
                 InputStream stream = new ByteArrayInputStream(chunkJson.getBytes(StandardCharsets.UTF_8));
