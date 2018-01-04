@@ -3,6 +3,9 @@ Fountain Chunker
 
 Application to Split large posted JSON array payloads into arbitrary chunks of elements and re-server them via a REST interface. It's effectively a big paging service. 
 
+This is a Spring Boot application and can be run and modified according to the Spring Boot documentation here:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
+i.e `gradle bootRun`.
+
 Posting arrays
 --------------
 Run the compiled JAR with embedded Tomcat:
