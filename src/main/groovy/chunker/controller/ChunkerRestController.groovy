@@ -35,7 +35,6 @@ class ChunkerRestController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> postJson(UriComponentsBuilder uriBuilder, @RequestBody final String jsonString){
-        //return "ITS_A_RESPONSE"
         HttpHeaders headers = new HttpHeaders();
         URI uri = uriBuilder.path("/users")
                 .buildAndExpand().toUri();
